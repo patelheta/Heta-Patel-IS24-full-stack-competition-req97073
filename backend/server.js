@@ -42,6 +42,24 @@ app.get('/api/products', (req, res) => {
   res.status(200).json(Products);
 });
 
+/**
+ * Input : {
+   "value":"test",
+   "orderBy": "scrumMasterName" || "developer"
+}
+ */
+app.get('/api/products/search', (req, res) => {
+  const inputValue = req.body.value;
+  const orderBy = req.body.orderBy;
+  let filterProducts;
+  if (orderBy === 'developer') {
+    filterProducts = Products.filter(product => product['Developers'].includes(inputValue));
+  } else if (orderBy === 'scrumMasterName') {
+    filterProducts = Products.filter(product => product['scrumMasterName'].includes(inputValue));
+  }
+  res.status(200).json(filterProducts);
+});
+
 app.post('/api/products', (req, res) => {
   const newProduct = req.body;
   const newProductId = generateProductId();
