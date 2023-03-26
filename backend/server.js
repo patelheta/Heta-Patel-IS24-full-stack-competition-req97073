@@ -17,18 +17,18 @@ const Products = [
       "NAME_5"
     ],
     scrumMasterName: 'TestScrum',
-    startDate: "YYYY/MM/DD",
+    startDate: "2023/03/25",
     methodology: 'Agile'
   }
 ];
 
 const generateProductId = function() {
-  return Math.random().toString(36).substring(2, 7);
+  return Math.floor(100000 + Math.random() * 900000);
 };
 
 // defining the Express app
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(bodyParser.json());
 app.use(cors());
