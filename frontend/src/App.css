@@ -26,3 +26,21 @@ button {
 .navbar a {
   color: white !important;
 }
+
+.newProductForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.newProductForm form {
+  width: 50%;
+}
+
+hr {
+  margin: 0px 0px 20px 0px;
+  width: 100px;
+  border: 2px solid #fcba19;
+  opacity: 100%;
+}
