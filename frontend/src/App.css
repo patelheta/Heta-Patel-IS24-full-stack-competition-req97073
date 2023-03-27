@@ -1,0 +1,28 @@
+main {
+  padding: 55px !important;
+  font-family: "BC Sans", "Noto Sans", Arial, "sans serif";
+}
+
+table {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+tr td {
+  padding: 10px !important;
+}
+
+button {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar {
+  color: white;
+  padding: 5px 50px;
+  background-color: #003366;
+  border: none;
+  border-bottom: 2px solid #fcba19;
+}
+
+.navbar a {
+  color: white !important;
+}
