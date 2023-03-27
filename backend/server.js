@@ -3,24 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-
-const Products = [
-  {
-    productId: '2342',
-    productName: 'Map',
-    productOwnerName: 'Google',
-    Developers: [
-      "NAME_1",
-      "NAME_2",
-      "NAME_3",
-      "NAME_4",
-      "NAME_5"
-    ],
-    scrumMasterName: 'TestScrum',
-    startDate: "2023/03/25",
-    methodology: 'Agile'
-  }
-];
+const { Products } = require('./Products');
 
 const generateProductId = function() {
   return Math.floor(100000 + Math.random() * 900000);
@@ -98,5 +81,5 @@ app.delete('/api/products/:id', (req, res) => {
 
 // starting the server
 app.listen(PORT, () => {
-  console.log(`Backend app listening on port ${PORT}!`);
+  console.log(`Server app listening on port ${PORT}!`);
 });
