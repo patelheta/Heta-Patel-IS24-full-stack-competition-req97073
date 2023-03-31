@@ -40,7 +40,56 @@ button {
 
 hr {
   margin: 0px 0px 20px 0px;
-  width: 100px;
+  width: 120px;
   border: 2px solid #fcba19;
   opacity: 100%;
+}
+
+.btn-add,
+.btn-edit,
+.btn-delete {
+  background-color: #fcba19;
+  border: none;
+  color: #003366;
+  font-size: small;
+}
+.btn-submit {
+  background-color: #fcba19;
+  width: 150px;
+  color: #003366;
+  border: none;
+}
+.btn-edit:hover,
+.btn-delete:hover,
+.btn-add:hover,
+.btn-submit:hover {
+  background-color: #003366;
+  color: white;
+}
+
+.developers {
+  width: 300px;
+  min-width: 300px;
+}
+
+.searchBar {
+  width: 500px;
+}
+#selectFilterBy {
+  width: 150px;
+}
+.input-group > .form-select {
+  flex: none;
+}
+
+@media only screen and (max-width: 1025px) {
+  main {
+    padding: 15px !important;
+  }
+  .newProductForm {
+    padding: 15px;
+  }
+  .newProductForm form {
+    width: 100%;
+  }
 }
