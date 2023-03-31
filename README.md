@@ -2,10 +2,13 @@
 
 ## Final Product
 
-!["Screenshot of Landing Page"]()
-!["Screenshot of Create New Product"]()
-!["Screenshot of Edit Product"]()
-!["Screenshot of Swagger Doc"]()
+!["Screenshot of Landing Page"](https://github.com/patelheta/Heta-Patel-IS24-full-stack-competition-req97073/blob/main/frontend/docs/LandingPage.png?raw=true)
+
+!["Screenshot of Create New Product"](https://github.com/patelheta/Heta-Patel-IS24-full-stack-competition-req97073/blob/main/frontend/docs/CreateProductPage.png?raw=true)
+
+!["Screenshot of Edit Product"](https://github.com/patelheta/Heta-Patel-IS24-full-stack-competition-req97073/blob/main/frontend/docs/UpdateProductPage.png?raw=true)
+
+!["Screenshot of Swagger Doc"](https://github.com/patelheta/Heta-Patel-IS24-full-stack-competition-req97073/blob/main/frontend/docs/SwaggerAPI.png?raw=true)
 
 ## Setup
 
