@@ -1,0 +1,142 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Products API",
+    "description": "A simple API to manage and view list of all products that IMB currently develops or maintains"
+  },
+  "host": "localhost:3001",
+  "basePath": "/",
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health check",
+        "description": "Checks the health of the application",
+        "responses": { "200": { "description": "Application is healthy" } }
+      }
+    },
+    "/api/products": {
+      "get": {
+        "summary": "Get all products",
+        "description": "Returns a list of all products",
+        "responses": {
+          "200": {
+            "description": "List of products",
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/Product" }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new product",
+        "description": "Creates a new product and adds it to the list of all products",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Product" }
+          }
+        ],
+        "responses": {
+          "201": { "description": "Product created successfully" },
+          "400": { "description": "Bad request" }
+        }
+      }
+    },
+    "/api/products/search": {
+      "get": {
+        "summary": "Search for products by developer name or scrum master name",
+        "description": "Returns a list of products filtered by developer name or scrum master name",
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "description": "Search value",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "filterBy",
+            "description": "Filter by developer or scrum master name",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "enum": ["developer", "scrumMasterName"]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/Product" }
+            }
+          }
+        }
+      }
+    },
+    "/api/products/{id}": {
+      "put": {
+        "summary": "Update a product by ID",
+        "description": "Updates a product with the specified ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "product",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Product" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Product updated successfully" },
+          "400": { "description": "Bad request" },
+          "404": { "description": "Product not found" }
+        }
+      },
+      "delete": {
+        "summary": "Delete a product by ID",
+        "description": "Deletes a product with the specified ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "schema": { "$ref": "#/definitions/Product" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Product deletd successfully" },
+          "400": { "description": "Bad request" },
+          "404": { "description": "Product not found" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "productId": { "type": "integer" },
+        "productName": { "type": "string" },
+        "productOwnerName": { "type": "string" },
+        "Developers": { "type": "array" },
+        "scrumMasterName": { "type": "string" },
+        "startDate": { "type": "string" },
+        "methodology": { "type": "string" }
+      }
+    }
+  }
+}
